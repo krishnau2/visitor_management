@@ -1,0 +1,154 @@
+body{
+    font-family: arial;
+    font-size: 13px;
+    background: #c9c9c9;
+}
+.clear{
+    display: block;
+    clear: both;
+}
+#wrap{
+    /*background: white;*/
+    width: 1020px;
+    margin: auto;
+    padding: 5px;
+    background-color: #fdf5ee;
+}
+
+.star_indication {
+    color: #FF0000
+}
+
+.form_container{
+
+    width: 900px;
+    margin: auto;
+    height: 350px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.form_messages{
+    width: 390px;
+    height: 25px;
+    margin: auto;
+    /*background-color: silver;*/
+    margin-bottom: 10px;
+}
+
+.form_success_message{
+    
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    color: #3da226;
+}
+.form_failure_message{
+
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    color: #e41e17;
+}
+
+.text{
+    padding: 10px;
+    border: 1px solid #E6E1C8;
+    background: #F3DDA6;
+}
+p{
+    font-weight: bold;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+#navigation{
+    width: 200px;
+}
+#navigation ul{
+    list-style: none;
+}
+#navigation ul li{
+    height: 30px;
+    border-bottom: 1px dotted #ccc;
+}
+#navigation ul li a{
+    text-indent: 20px;
+    padding: 5px 0;
+    display: block;
+    height: 20px;
+    text-decoration: none;
+    color: #434343;
+    background-image: url(bull.png);
+    background-repeat: no-repeat;
+    background-position: 5px 6px ;
+}
+#navigation ul li a:hover{
+    background-color: #8E8963;
+    background-image: url(bull.png);
+    background-repeat: no-repeat;
+    background-position: 15px 6px ;
+    color: white;
+}
+#footer{
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+#footer img{
+    border: none;
+}
+
+table.report {
+    font-family:arial;
+    background-color: #CDCDCD;
+    margin:10px 0pt 10px;
+    font-size: 8pt;
+    width: 100%;
+    text-align: left;
+}
+table.report thead tr th, table.report tfoot tr th {
+    background-color: #e6EEEE;
+    border: 1px solid #FFF;
+    font-size: 8pt;
+    padding: 4px;
+}
+table.report thead tr .header {
+    /*background-image: url(bg.gif);*/
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+table.report tbody td {
+    color: #3D3D3D;
+    padding: 4px;
+    background-color: #FFF;
+    vertical-align: top;
+}
+table.report tbody tr.odd td {
+    background-color:#35359c;
+}
+table.report thead tr .headerSortUp {
+    /*background-image: url(asc.gif);*/
+}
+table.report thead tr .headerSortDown {
+    /*background-image: url(desc.gif);*/
+}
+table.report thead tr .headerSortDown, table.report thead tr .headerSortUp {
+    background-color: #8dbdd8;
+}
+
+.list_view{
+    height: 350px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.option_panel{
+    width: auto;
+    height: 50px;
+    background-color: silver;
+}
+
+.loading{
+    width: auto;
+    height: 100px;
+    margin: auto;
+    display: none;
+    background-image: url(../../img/ajax-loader.gif);
+    background-repeat: no-repeat;
+}
