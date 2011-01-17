@@ -13,9 +13,12 @@ $listOfCustomers ->dbconnector($database, $connect);
 <html>
     <head>
         <script type="text/javascript" src='../js/jquery-1.4.2.min.js'> </script>
+        <script type="text/javascript" src='../js/jquery-ui-1.8rc3.custom.min.js'> </script>
         <script type="text/javascript" src='../js/jquery.tablesorter.js'> </script>
+        <script type="text/javascript" src="../js/email_and_date_wise_list.js"></script>
         <LINK REL=StyleSheet HREF="../css/style.css" TYPE="text/css">
         <LINK REL=StyleSheet HREF="../css/tablesorter/style.css" TYPE="text/css">
+        <LINK REL=StyleSheet HREF="../js/dark-hive/jquery-ui-1.8rc3.custom.css" TYPE="text/css">
         <title>Colour Cafe Customer List</title>
 
         <script type="text/javascript">
@@ -41,6 +44,15 @@ $listOfCustomers ->dbconnector($database, $connect);
                     <img src="../img/Search-icon.png" alt="Search page" border="0" height="28">
                     Search</a>
             </p><br>
+            <div class="option_panel">
+                <form action="../model/email_and_date_wise_list_model.php" method="post" name="customer_list_form">
+                    <label> email List only. </label>
+                    <input type="checkbox" name="email_list_only" id="email_list_only" />
+                    <label>Date wise List</label>
+                    <input type="text" name="date" id="date" size="10" />
+                    <input type="submit" name="customer_list_submit" id="customer_list_submit" value="Submit"/>
+                </form>
+            </div>
             <table class="tablesorter" style="border: 1px solid silver;">
                 <thead>
                     <tr>
@@ -104,6 +116,39 @@ $listOfCustomers ->dbconnector($database, $connect);
                     </tr>
                 </tbody>
             </table>
+
+            <div id="email_list_lightbox_panel">
+                <div class="pop-up_caption">
+                    E-mail Requests
+                </div>
+                <div class="close_button">
+                    <a id="close-panel" style="text-decoration: none;" href="#">close [X]</a>
+                </div>
+                <div id="loading"></div>
+                <table class="tablesorter" id="email_customer_list_table" style="border: 1px solid silver;">
+                    <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th>email Date</th>
+                            <th>No.</th>
+                            <th>RFC/POB</th>
+                            <th>Name</th>
+                            <th>SW Id</th>
+                            <th>No email images</th>
+                            <th>No selected images</th>
+                            <th width="30">EDIT</th>
+                            <td width="10"></td>
+                        </tr>
+                    </thead>
+                    <tbody class="list_view" >
+                        <tr id="email_customer_list_row" class="email_customer_list_row" style="display: none;" ></tr>
+                    </tbody>
+                </table>
+
+            </div><!-- /panel -->
+
+            <div id="lightbox"></div><!-- /lightbox -->
+
         </div>
     </body>
 </html>

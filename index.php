@@ -3,8 +3,9 @@
         <title>Colour Cafe Customer Management</title>
         <script type="text/javascript" src='./js/jquery-1.4.2.min.js'> </script>
         <script type="text/javascript" src='./js/menu.js'> </script>
+        <script type="text/javascript" src="./js/colourcafe_script.js"></script>
         <LINK REL=StyleSheet HREF="./css/style.css" TYPE="text/css">
-        <style type="text/css">
+  <!--      <style type="text/css">
             #lightbox{
                 display:none;
                 background:#000000;
@@ -42,35 +43,35 @@
 
         <script type="text/javascript">
             $(document).ready(function(){
-                $("a#show-panel").click(function(){
-                    $("#lightbox, #lightbox-panel").fadeIn(300);
-                });
-                $("a#close-panel").click(function(){
-                    $("#lightbox, #lightbox-panel").fadeOut(300);
-                });
+//                $("a#show-panel").click(function(){
+//                    $("#lightbox, #lightbox-panel").fadeIn(300);
+//                });
+//                $("a#close-panel").click(function(){
+//                    $("#lightbox, #lightbox-panel").fadeOut(300);
+//                });
 
-                var isCtrl = false;
-                var isAlt = false;
-                var isShift = false;
-                $(document).keyup(function (e) {
-                    if(e.which == 17) isCtrl=false;
-                }).keydown(function (e) {
-                    if(e.which == 16) isShift=true;
-                    if(e.which == 17) isCtrl=true;
-                    if(e.which == 18) isAlt=true;
-                    if(e.which == 75 && isCtrl == true && isAlt == true && isShift == true) {
-                        alert('-KK-');
-
-                        isCtrl = false;
-                        isAlt = false;
-                        isShift = false;
-                        return false;
-                    }
-                });
+//                var isCtrl = false;
+//                var isAlt = false;
+//                var isShift = false;
+//                $(document).keyup(function (e) {
+//                    if(e.which == 17) isCtrl=false;
+//                }).keydown(function (e) {
+//                    if(e.which == 16) isShift=true;
+//                    if(e.which == 17) isCtrl=true;
+//                    if(e.which == 18) isAlt=true;
+//                    if(e.which == 75 && isCtrl == true && isAlt == true && isShift == true) {
+//                        alert('-KK-');
+//
+//                        isCtrl = false;
+//                        isAlt = false;
+//                        isShift = false;
+//                        return false;
+//                    }
+//                });
 
             });
         </script>
-
+-->
     </head>
     <title>
         Colour Cafe Customer Management
