@@ -145,7 +145,7 @@ p{
     border:2px solid #CCCCCC;
     z-index:1001;
 }
-#email_list_lightbox_panel,#day_wise_list_lightbox_panel {
+#email_list_lightbox_panel {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -160,7 +160,7 @@ p{
     border:2px solid #CCCCCC;
     z-index:1001;
 }
-/*#day_wise_list_lightbox_panel{
+#day_wise_list_lightbox_panel{
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -174,7 +174,7 @@ p{
     padding:10px 15px 10px 15px;
     border:2px solid #CCCCCC;
     z-index:1001;
-}*/
+}
 #about{
     width: 190px;
     height: 20px;

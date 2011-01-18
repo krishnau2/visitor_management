@@ -129,7 +129,7 @@ $listOfCustomers ->dbconnector($database, $connect);
                     <a id="close-panel" style="text-decoration: none;" href="#">close [X]</a>
                 </div>
                 <div id="loading"></div>
-                <table class="tablesorter" id="email_customer_list_table" style="border: 1px solid silver;">
+                <table class="report" id="email_customer_list_table" style="border: 1px solid silver;">
                     <thead>
                         <tr>
                             <th>SL</th>
@@ -161,7 +161,7 @@ $listOfCustomers ->dbconnector($database, $connect);
                     <a id="close-panel" style="text-decoration: none;" href="#">close [X]</a>
                 </div>
                 <div id="loading"></div>
-                <table class="tablesorter" id="day_wise_customer_list_table" style="border: 1px solid silver;">
+                <table class="report" id="day_wise_customer_list_table" style="border: 1px solid silver;">
                     <thead>
                         <tr>
                             <th>SL</th>

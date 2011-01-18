@@ -15,7 +15,7 @@ $(document).ready(function(){
         
         $('.email_customer_list_row').empty(); // emptying the table
         $(".pop-up_caption").empty();
-         $(".pop-up_caption").append("E-mail Requests ");
+        $(".pop-up_caption").append("E-mail Requests ");
 
         newId = 1;
 
@@ -37,6 +37,8 @@ $(document).ready(function(){
             $("a#close-panel").click(function(){
                 $("#lightbox, #email_list_lightbox_panel").fadeOut(300);
                 $('#email_list_only').attr('checked',false);
+                $('.email_customer_list_row').empty(); // emptying the table
+                $(".pop-up_caption").empty();
             });
         }
         else{
@@ -60,8 +62,9 @@ $(document).ready(function(){
         var banner_display_date = temp_date[2]+"-"+temp_date[1]+"-"+temp_date[0];
         var banner_caption = "Day wise list for :- " + banner_display_date;
 
+
         if(search_date != ""){
-            
+            $(".pop-up_caption").append(banner_caption);
             $("#loading").show();
 
             $.post("../model/email_and_date_wise_list_model.php",{
@@ -80,10 +83,11 @@ $(document).ready(function(){
 
             $("#lightbox, #day_wise_list_lightbox_panel").fadeIn(300);
 
-            $(".pop-up_caption").append(banner_caption);
-
             $("a#close-panel").click(function(){
                 $("#lightbox, #day_wise_list_lightbox_panel").fadeOut(300);
+                $("#search_date").val("");
+                $('.day_wise_customer_list_row').empty();
+                $(".pop-up_caption").empty();
             });
         }
         else if(search_date == ""){
