@@ -43,14 +43,18 @@ $listOfCustomers ->dbconnector($database, $connect);
                 <a href="./nameSearchView.php">
                     <img src="../img/Search-icon.png" alt="Search page" border="0" height="28">
                     Search</a>
-            </p><br>
+            </p>
             <div class="option_panel">
                 <form action="../model/email_and_date_wise_list_model.php" method="post" name="customer_list_form">
-                    <label> email List only. </label>
-                    <input type="checkbox" name="email_list_only" id="email_list_only" />
-                    <label>Date wise List</label>
-                    <input type="text" name="date" id="date" size="10" />
-                    <input type="submit" name="customer_list_submit" id="customer_list_submit" value="Submit"/>
+                    <div class="controls">
+                        <label> email List only :  </label>
+                        <input type="checkbox" name="email_list_only" id="email_list_only" />
+                    </div>
+                    <div class="controls">
+                        <label>Date wise List :  </label>
+                        <input type="text" name="search_date" id="search_date" size="10" />
+                        <input type="submit" name="day_wise_customer_list_submit" id="day_wise_customer_list_submit" value="List it"/>
+                    </div>
                 </form>
             </div>
             <table class="tablesorter" style="border: 1px solid silver;">
@@ -116,7 +120,7 @@ $listOfCustomers ->dbconnector($database, $connect);
                     </tr>
                 </tbody>
             </table>
-
+            <!-- email section -->
             <div id="email_list_lightbox_panel">
                 <div class="pop-up_caption">
                     E-mail Requests
@@ -144,11 +148,44 @@ $listOfCustomers ->dbconnector($database, $connect);
                         <tr id="email_customer_list_row" class="email_customer_list_row" style="display: none;" ></tr>
                     </tbody>
                 </table>
-
             </div><!-- /panel -->
-
             <div id="lightbox"></div><!-- /lightbox -->
+            <!-- End of email section -->
 
+            <!-- Day wise list section -->
+            <div id="day_wise_list_lightbox_panel">
+                <div class="pop-up_caption">
+                    <!-- Day wise list for :- --><!-- commented because it is handled by javascript-->
+                </div>
+                <div class="close_button">
+                    <a id="close-panel" style="text-decoration: none;" href="#">close [X]</a>
+                </div>
+                <div id="loading"></div>
+                <table class="tablesorter" id="day_wise_customer_list_table" style="border: 1px solid silver;">
+                    <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th>Date</th>
+                            <th>No.</th>
+                            <th>RFC/POB</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>SW Id</th>
+                            <th>No selected images</th>
+                            <th>Email</th>
+                            <th width="30">EDIT</th>
+                            <td width="10"></td>
+                        </tr>
+                    </thead>
+                    <tbody class="list_view" >
+                        <tr id="day_wise_customer_list_row" class="day_wise_customer_list_row" style="display: none;" ></tr>
+                    </tbody>
+                </table>
+            </div><!-- /panel -->
+            <!-- The following <div> lightbox is commented because it is already included in the email section
+            and it is enough for this section also. If multiple declaration is done then transparacy get reduced. -->
+            <!--     <div id="lightbox"></div><!-- /lightbox -->
+            <!-- End of day wise list section -->
         </div>
     </body>
 </html>

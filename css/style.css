@@ -109,7 +109,7 @@ p{
     z-index:1000;
 }
 .pop-up_caption{
-    width: 135px;
+    width: 250px;
     height: 23px;
     /*background-color: silver;*/
     float: left;
@@ -131,6 +131,9 @@ p{
     font-weight: bold;
 }
 #lightbox-panel{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
     display:none;
     position:fixed;
     top:100px;
@@ -142,7 +145,7 @@ p{
     border:2px solid #CCCCCC;
     z-index:1001;
 }
-#email_list_lightbox_panel{
+#email_list_lightbox_panel,#day_wise_list_lightbox_panel {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -157,11 +160,26 @@ p{
     border:2px solid #CCCCCC;
     z-index:1001;
 }
+/*#day_wise_list_lightbox_panel{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    display:none;
+    position:fixed;
+    top:100px;
+    left:50%;
+    margin-left:-360px;
+    width:700px;
+    background:#FFFFFF;
+    padding:10px 15px 10px 15px;
+    border:2px solid #CCCCCC;
+    z-index:1001;
+}*/
 #about{
-    width: 187px;
+    width: 190px;
     height: 20px;
     position: relative;
-    left: 837px;
+    left: 833px;
 }
 #about a{
     color: #434343;
@@ -214,8 +232,19 @@ table.report thead tr .headerSortDown, table.report thead tr .headerSortUp {
 
 .option_panel{
     width: auto;
-    height: 50px;
+    height: 33px;
     background-color: silver;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    padding-left: 30px;
+    padding-top: 5px;
+}
+.controls{
+    margin-left: 30px;
+    width: 300px;
+    height: 30px;
+    /*background-color: yellow;*/
+    float: left;
 }
 
 .loading{

@@ -71,7 +71,7 @@
 
             });
         </script>
--->
+        -->
     </head>
     <title>
         Colour Cafe Customer Management
@@ -90,22 +90,22 @@
                     <li><a href="./view/customer_list.php">Customer List</a></li>
                     <li><a href="./view/nameSearchView.php">Customer Search</a></li>
                     <li><a href="./view/categorySearchView.php">Category Search</a></li>
-                    <li><a href="#">General Search</a></li>
+                    <li><a href="#">Email Requests</a></li>
                     <li><a href="#">Analysis</a> </li>
                 </ul>
             </div>
             <div id="about">
-                <a id="show-panel" style="text-decoration: none;" href="#">&copy; Datamen Consultant Pvt Ltd.</a>
+                <a id="show-panel" style="text-decoration: none;" href="#">&copy; Datamen Consultants Pvt Ltd.</a>
             </div>
             <div id="lightbox-panel">
                 <center>
                     <h2>Colour Cafe Customer Management V 1.0</h2>
                     <p>Developed and Maintained by</p>
-                    <h2>Datamen Consultant Pvt Ltd.</h2>
+                    <h2>Datamen Consultants Pvt Ltd.</h2>
                 </center>
-                <p align="center">
-                    <a id="close-panel" style="text-decoration: none;" href="#">Close this window</a>
-                </p>
+                <div class="close_button">
+                    <a id="close-panel" style="text-decoration: none;" href="#">close [X]</a>
+                </div>
             </div><!-- /panel -->
 
             <div id="lightbox"></div><!-- /lightbox -->

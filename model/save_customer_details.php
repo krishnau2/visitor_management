@@ -83,7 +83,7 @@ if ($_POST['date']!="" && $_POST['no']!="" && $_POST['category']!="" ) {
                     '$pr','$bill_1','$bill_1_val','$bill_1_date','$software','$bill_2',
                     '$bill_3','$bill_4','$bill_5','$comments','$bed_room','$living_room',
                     '$kitchen','$wall_fashion','$single_storey','$double_storey','$single_storey_RT',
-                    '$double_storey_RT',NULL,NULL)";
+                    '$double_storey_RT')";
 
         $result = mysql_query($insertionQuery);
         if($result) {
