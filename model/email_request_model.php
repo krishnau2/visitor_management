@@ -22,7 +22,7 @@ if(isset ($_POST['ajax'])) {
     }
     else {
         echo "error";
-    }
+    } 
 }
 else {
     if ($_POST['no']!="" && $_POST['software']!="" && $_POST['no_of_selection_of_images']!="" ) {
