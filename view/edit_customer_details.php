@@ -6,9 +6,9 @@ $disconnect=0;
 $database="colourcafe"; // Database used.
 
 //Database connection object creation
-$listOfCustomers=new databaseConnectionClass();
+$edit_customers=new databaseConnectionClass();
 //Accessing the database connection function
-$listOfCustomers ->dbconnector($database, $connect);
+$edit_customers ->dbconnector($database, $connect);
 ?>
 
 <?php
@@ -31,6 +31,72 @@ else if($msg=='4') {
 }
 
 ?>
+
+<?php
+$id=0;
+$date = "";
+$no = "";
+$rfc_pob="";
+$name="";
+$mobile ="";
+$land_line="";
+$email ="";
+$address ="";
+$software ="";
+$pr ="";
+$bill_1 ="";
+$bill_1_val ="";
+$bill_1_date ="";
+$bill_2 ="";
+$bill_3 ="";
+$bill_4 ="";
+$bill_5 ="";
+$comments ="";
+$bed_room = "";
+$living_room = "";
+$kitchen = "";
+$wall_fashion = "";
+$single_storey = "";
+$double_storey = "";
+$single_storey_RT = "";
+$double_storey_RT = "";
+if(isset ($_POST["edit"])) {
+    $id=$_POST["id"];
+    $editQuery = "SELECT * FROM customer_details WHERE id=$id";
+    $result = mysql_query($editQuery);
+
+    while ($row = mysql_fetch_array($result)) {
+        $date = $row['DATE'];
+        $no = $row['SL_NO'];
+        $rfc_pob=$row['RFC_POB'];
+        $name=$row['NAME'];
+        $mobile = $row['MOBILE'];
+        $land_line=$row['LANDLINE'];
+        $email = $row['EMAIL'];
+        $address = $row['ADDRESS'];
+        $software = $row['SOFTWARE_ID'];
+        $pr = $row['PR_NO'];
+        $bill_1 =$row['BILL_1'];
+        $bill_1_val = $row['BILL_1_VAL'];
+        $bill_1_date = $row['BILL_1_DATE'];
+        $bill_2 = $row['BILL_2'];
+        $bill_3 = $row['BILL_3'];
+        $bill_4 = $row['BILL_4'];
+        $bill_5 = $row['BILL_5'];
+        $comments = $row['COMMENTS'];
+        $bed_room = $row['bed_room'];
+        $living_room = $row['living_room'];
+        $kitchen = $row['kitchen'];
+        $wall_fashion = $row['wall_fashion'];
+        $single_storey = $row['single_storey'];
+        $double_storey = $row['double_storey'];
+        $single_storey_RT = $row['single_storey_with_roof_tiles'];
+        $double_storey_RT = $row['double_storey_with_roof_tiles'];
+    }
+}
+
+?>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
@@ -44,73 +110,7 @@ else if($msg=='4') {
 
     </head>
     <body>
-        <?php
-        $id=0;
-        $date = "";
-        $no = "";
-        $rfc_pob="";
-        $name="";
-        $mobile ="";
-        $land_line="";
-        $email ="";
-        $address ="";
-        $software ="";
-        $pr ="";
-        $bill_1 ="";
-        $bill_1_val ="";
-        $bill_1_date ="";
-        $bill_2 ="";
-        $bill_3 ="";
-        $bill_4 ="";
-        $bill_5 ="";
-        $comments ="";
-        $bed_room = "";
-        $living_room = "";
-        $kitchen = "";
-        $wall_fashion = "";
-        $single_storey = "";
-        $double_storey = "";
-        $single_storey_RT = "";
-        $double_storey_RT = "";
-        if(isset ($_POST["edit"])) {
-            $id=$_POST["id"];
-            $editQuery = "SELECT * FROM customer_details WHERE id=$id";
-            $result = mysql_query($editQuery);
 
-            while ($row = mysql_fetch_array($result)) {
-                $date = $row['DATE'];
-                $no = $row['SL_NO'];
-                $rfc_pob=$row['RFC_POB'];
-                $name=$row['NAME'];
-                $mobile = $row['MOBILE'];
-                $land_line=$row['LANDLINE'];
-                $email = $row['EMAIL'];
-                $address = $row['ADDRESS'];
-                $software = $row['SOFTWARE_ID'];
-                $pr = $row['PR_NO'];
-                $bill_1 =$row['BILL_1'];
-                $bill_1_val = $row['BILL_1_VAL'];
-                $bill_1_date = $row['BILL_1_DATE'];
-                $bill_2 = $row['BILL_2'];
-                $bill_3 = $row['BILL_3'];
-                $bill_4 = $row['BILL_4'];
-                $bill_5 = $row['BILL_5'];
-                $comments = $row['COMMENTS'];
-                $bed_room = $row['bed_room'];
-                $living_room = $row['living_room'];
-                $kitchen = $row['kitchen'];
-                $wall_fashion = $row['wall_fashion'];
-                $single_storey = $row['single_storey'];
-                $double_storey = $row['double_storey'];
-                $single_storey_RT = $row['single_storey_with_roof_tiles'];
-                $double_storey_RT = $row['double_storey_with_roof_tiles'];
-                $no_of_email_images = $row['no_of_email_images'];
-                $no_of_selection_of_images = $row['no_of_selection_of_images'];
-
-            }
-        }
-
-        ?>
         <div id="wrap">
             <center>
                 <img src="../img/Logo.jpg" alt="Logo" width="500" height="60" />
@@ -261,18 +261,6 @@ else if($msg=='4') {
                                 <td><input type="checkbox" name="double_storey_RT" id="double_storey_RT"  <?php if($double_storey_RT) {
                                         echo "checked";
                                            } ?>/></td>
-                            </tr>
-                            <tr>
-                                <td>No.of Selection of images</td>
-                                <td>
-                                    <input type="text" size="3" name="no_of_selection_of_images" id="no_of_selection_of_images" value="<?php echo $no_of_selection_of_images ?>"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>No.of email images</td>
-                                <td>
-                                    <input type="text" size="3" name="no_of_email_images" id="no_of_email_images" value="<?php echo $no_of_email_images ?>"/>
-                                </td>
                             </tr>
                             <tr>
                                 <td><input type="hidden" name="id" id="id" value="<?php echo $id ?>" </td>

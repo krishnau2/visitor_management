@@ -13,7 +13,7 @@ $(document).ready(function(){
 
     $("#email_list_only").click(function(){
         
-        $('.email_customer_list_row').empty(); // emptying the table
+        $('.email').remove(); // emptying the table
         $(".pop-up_caption").empty();
         $(".pop-up_caption").append("E-mail Requests ");
 
@@ -37,7 +37,7 @@ $(document).ready(function(){
             $("a#close-panel").click(function(){
                 $("#lightbox, #email_list_lightbox_panel").fadeOut(300);
                 $('#email_list_only').attr('checked',false);
-                $('.email_customer_list_row').empty(); // emptying the table
+                $('.email').remove(); // emptying the table
                 $(".pop-up_caption").empty();
             });
         }
@@ -53,7 +53,7 @@ $(document).ready(function(){
 
     $("#day_wise_customer_list_submit").click(function(e){
         e.preventDefault();
-        $('.day_wise_customer_list_row').empty();
+        $('.day_list').remove();
         $(".pop-up_caption").empty();
         newId = 1;
         var search_date = $("#search_date").val();
@@ -86,7 +86,7 @@ $(document).ready(function(){
             $("a#close-panel").click(function(){
                 $("#lightbox, #day_wise_list_lightbox_panel").fadeOut(300);
                 $("#search_date").val("");
-                $('.day_wise_customer_list_row').empty();
+                $('.day_list').remove();
                 $(".pop-up_caption").empty();
             });
         }
@@ -109,7 +109,8 @@ var process_email_customer_list_data = function(data){
         var temp_date = String(current_data["email_send_date"]).split(/[- :]/);
         var email_date = temp_date[2]+"-"+temp_date[1]+"-"+temp_date[0];
 
-        $('#email_customer_list_table').append($('#email_customer_list_row').clone(true).attr('id', 'row'+newId));
+        $('#email_customer_list_table').append($('#email_customer_list_row').clone(true)
+        .attr('id', 'row'+newId).attr('class','email'));
 
         $('#row'+newId).append(
             td(newId)+
@@ -120,7 +121,7 @@ var process_email_customer_list_data = function(data){
             td(current_data["SOFTWARE_ID"])+
             td(current_data["no_of_email_images"])+
             td(current_data["no_of_selection_of_images"])+
-            td("<form action='../view/edit_customer_details.php' method='post'>"
+            td("<form action='../view/email_request_view.php' method='post'>"
                 +"<input type='hidden' name='id' value="+current_data['id']+">"
                 +"<input type='submit' style='width: 40px; ' value='Edit' name='edit' id='edit'/>"
                 +"</form>")
@@ -144,7 +145,8 @@ var process_day_wise_customer_list_data = function(data){
         var temp_date = String(current_data["DATE"]).split(/[- :]/);
         var date = temp_date[2]+"-"+temp_date[1]+"-"+temp_date[0];
 
-        $('#day_wise_customer_list_table').append($('#day_wise_customer_list_row').clone(true).attr('id', 'row'+newId));
+        $('#day_wise_customer_list_table').append($('#day_wise_customer_list_row').clone(true)
+        .attr('id', 'row'+newId).attr('class','day_list'));
 
         $('#row'+newId).append(
             td(newId)+

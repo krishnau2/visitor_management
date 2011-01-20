@@ -5,29 +5,30 @@ $connect=1;
 $disconnect=0;
 $database="colourcafe"; // Database used.
 //Database connection object creation
-$listOfCustomers=new databaseConnectionClass();
+$new_customers=new databaseConnectionClass();
 //Accessing the database connection function
-$listOfCustomers ->dbconnector($database, $connect);
+$new_customers ->dbconnector($database, $connect);
 if ($_POST['date']!="" && $_POST['no']!="" && $_POST['category']!="" ) {
     $id=$_POST['id'];
     $date =$_POST['date'];
     $no = $_POST['no'];
-    $rfc_pob=$_POST['category'];
-    $name=$_POST['customer_name'];
-    $mobile =$_POST['mobile'];
-    $land_line=$_POST['land_line'];
-    $email =$_POST['email'];
-    $address =$_POST['address'];
-    $software =$_POST['software'];
-    $pr =$_POST['pr_no'];
-    $bill_1 =$_POST['first_bill'];
-    $bill_1_val =$_POST['first_bill_value'];
-    $bill_1_date =$_POST['first_bill_date'];
-    $bill_2 =$_POST['second_bill'];
-    $bill_3 =$_POST['third_bill'];
-    $bill_4 =$_POST['forth_bill'];
-    $bill_5 =$_POST['fifth_bill'];
-    $comments =$_POST['comments'];
+    $rfc_pob = $_POST['category'];
+    $name = $_POST['customer_name'];
+    $mobile = $_POST['mobile'];
+    $land_line = $_POST['land_line'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+    $software = $_POST['software'];
+    $pr = $_POST['pr_no'];
+    $bill_1 = $_POST['first_bill'];
+    $bill_1_val = $_POST['first_bill_value'];
+    $bill_1_date = $_POST['first_bill_date'];
+    $bill_2 = $_POST['second_bill'];
+    $bill_3 = $_POST['third_bill'];
+    $bill_4 = $_POST['forth_bill'];
+    $bill_5 = $_POST['fifth_bill'];
+    $comments = $_POST['comments'];
+    
     if(isset ($_POST['bed_room'])) {
         $bed_room=1;
     }
@@ -103,7 +104,7 @@ if ($_POST['date']!="" && $_POST['no']!="" && $_POST['category']!="" ) {
                     double_storey_with_roof_tiles='$double_storey_RT' WHERE id='$id'";
 
         $updateResult = mysql_query($updateQuery);
-        $listOfCustomers ->dbconnector($database, $disconnect);
+        $new_customers ->dbconnector($database, $disconnect);
         if($updateResult) {
             header("Location:../view/edit_customer_details.php?msg=3");
         }

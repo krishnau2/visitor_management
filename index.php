@@ -90,7 +90,7 @@
                     <li><a href="./view/customer_list.php">Customer List</a></li>
                     <li><a href="./view/nameSearchView.php">Customer Search</a></li>
                     <li><a href="./view/categorySearchView.php">Category Search</a></li>
-                    <li><a href="#">Email Requests</a></li>
+                    <li><a href="./view/email_request_view.php">Email Requests</a></li>
                     <li><a href="#">Analysis</a> </li>
                 </ul>
             </div>

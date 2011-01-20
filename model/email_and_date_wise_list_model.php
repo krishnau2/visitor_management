@@ -20,6 +20,7 @@ if($search_cateogry == "email") {
     $email_list_query = "SELECT customer_details.SL_NO,
     NAME,
     RFC_POB,
+    email_requests.id,
     email_requests.email_send_date,
     email_requests.no_of_email_images,
     email_requests.SOFTWARE_ID,
@@ -53,7 +54,6 @@ else if($search_cateogry == "day_wise" && $search_date != "") {
     email_requests.no_of_email_images,
     email_requests.no_of_selection_of_images
     FROM customer_details INNER JOIN email_requests ON customer_details.SL_NO = email_requests.SL_NO
-    AND customer_details.DATE = email_requests.email_send_date 
     WHERE DATE = '$search_date' 
     ORDER BY customer_details.SL_NO ";
     $result = mysql_query($day_wise_list_query);
