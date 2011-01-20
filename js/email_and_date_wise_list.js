@@ -5,6 +5,8 @@ $(document).ready(function(){
     $('#search_date').datepicker({
         dateFormat: 'yy-mm-dd'
     });
+    
+    $("table.tablesorter").tablesorter();
 
     // removing TICK while loading
     $('#email_list_only').attr('checked',false);
@@ -159,7 +161,7 @@ var process_day_wise_customer_list_data = function(data){
             td(current_data["no_of_selection_of_images"])+
             td(current_data["no_of_email_images"])+
             td("<form action='../view/edit_customer_details.php' method='post'>"
-                +"<input type='hidden' name='id' value="+current_data['id']+">"
+                +"<input type='hidden' name='id' value="+current_data["id"]+">"
                 +"<input type='submit' style='width: 40px; ' value='Edit' name='edit' id='edit'/>"
                 +"</form>")
             );

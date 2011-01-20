@@ -8,7 +8,9 @@ $(document).ready(function(){
     $("#newSearch").click(function(e){
         e.preventDefault();
         enable_tick_boxes();
-        location.reload();
+        //        location.reload();
+        $('.result_row').remove();
+        newId=1;
         $("#newSearch").hide();
         $("#categorySearch").show();
         uncheck_tick_boxes();
@@ -87,20 +89,30 @@ $(document).ready(function(){
             double_storey_RT=0;
         }
 
-        $.post("../model/categorySearchModel.php", {
-            bed_room:bed_room,
-            living_room:living_room,
-            kitchen:kitchen,
-            wall_fashion:wall_fashion,
-            single_storey:single_storey,
-            double_storey:double_storey,
-            single_storey_RT:single_storey_RT,
-            double_storey_RT:double_storey_RT
-        }, function(data){
+        if(bed_room || living_room || kitchen || wall_fashion || single_storey || double_storey || single_storey_RT || double_storey_RT){
+            $.post("../model/categorySearchModel.php", {
+                bed_room:bed_room,
+                living_room:living_room,
+                kitchen:kitchen,
+                wall_fashion:wall_fashion,
+                single_storey:single_storey,
+                double_storey:double_storey,
+                single_storey_RT:single_storey_RT,
+                double_storey_RT:double_storey_RT
+            }, function(data){
 
-            process_search_data(data);
+                process_search_data(data);
             
-        },"json");
+            },"json");
+        }
+        else{
+            alert("Please select a category to search.");
+            enable_tick_boxes();
+            //        location.reload();
+            $("#newSearch").hide();
+            $("#categorySearch").show();
+            uncheck_tick_boxes();
+        }
     });
 });
 
@@ -163,7 +175,7 @@ var process_search_data = function(data){
             img_double_rt="<img src='../img/cross1.png' alt='Logo'  />"
         }
 
-        $('#categorySearchResultTable').append($('#categorySearchRow').clone(true).attr('id', 'row'+newId));
+        $('#categorySearchResultTable').append($('#categorySearchRow').clone(true).attr('id', 'row'+newId).attr('class','result_row'));
         $('#row'+newId).append(
             td(date)+
             td(current_data["SL_NO"])+

@@ -43,7 +43,17 @@ $email_send_date="";
 
 if(isset ($_POST["edit"])) {
     $id=$_POST["id"];
-    $editQuery = "SELECT * FROM email_requests WHERE id=$id";
+    $editQuery = "SELECT
+    email_requests.id,
+    email_requests.SL_NO,
+    email_requests.SOFTWARE_ID,
+    no_of_email_images,
+    no_of_selection_of_images,
+    email_send_date,
+    customer_details.NAME
+    FROM email_requests
+    INNER JOIN customer_details ON customer_details.SL_NO = email_requests.SL_NO
+    WHERE email_requests.id = $id";
     $result = mysql_query($editQuery);
 
     while ($row = mysql_fetch_array($result)) {
@@ -52,6 +62,7 @@ if(isset ($_POST["edit"])) {
         $no_of_email_images = $row['no_of_email_images'];
         $no_of_selection_of_images = $row['no_of_selection_of_images'];
         $email_send_date = $row['email_send_date'];
+        $name = $row['NAME'];
     }
 }
 
@@ -64,7 +75,7 @@ if(isset ($_POST["edit"])) {
         <title>Colour Cafe Customer Management</title>
         <script type="text/javascript" src='../js/jquery-1.4.2.min.js'> </script>
         <script type="text/javascript" src='../js/jquery-ui-1.8rc3.custom.min.js'> </script>
-        <script type="text/javascript" src='../js/new_customer_validation.js'> </script>
+        <script type="text/javascript" src='../js/new_email_request_validation.js'> </script>
         <LINK REL=StyleSheet HREF="../js/dark-hive/jquery-ui-1.8rc3.custom.css" TYPE="text/css">
         <LINK REL=StyleSheet HREF="../css/style.css" TYPE="text/css">
 
@@ -95,9 +106,12 @@ if(isset ($_POST["edit"])) {
                 <form action="../model/email_request_model.php" method="post" name="email_request">
                     <table>
                         <tbody>
-                            <tr>
+                            <tr id="show_name">
                                 <td width="300">Request No <span class="star_indication">*</span></td>
                                 <td><input type="text" name="no" id="no" size="4" value="<?php echo $no ?>"/></td>
+                                <?php if($id != 0 ) {  ?>
+                                <td class="name_board"><?php echo "NAME :- ".$name; ?></td>
+                                    <?php } ?>
                             </tr>
                             <tr>
                                 <td>Software <span class="star_indication">*</span></td>
@@ -121,7 +135,8 @@ if(isset ($_POST["edit"])) {
                             </tr>
                             <tr>
                                 <td><input type="hidden" name="id" id="id" value="<?php echo $id ?>" </td>
-                                <td><input style="height: 45px; width: 160px; margin: 20px;" type="submit" name="save_button" id="save_button" value="Save Details" /> </td>
+                                <td><input class="submit_button" type="submit" name="save_button" id="save_button"
+                                           value="<?php if($id == 0) echo "Save Details"; else echo "Update Details"; ?>" /> </td>
                             </tr>
                         </tbody>
                     </table>

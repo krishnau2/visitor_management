@@ -30,8 +30,8 @@
                             <input type="text" name="searchName" id="searchName" />
                         </td>
                         <td>
-                            <input type="submit" name="submitSearch" id="submitSearch" value="Search" style="width: 100px; height: 30px; font-weight: bold;"/>
-                            <input type="submit" name="newSearch" id="newSearch" value="New" style="width: 100px; height: 30px; font-weight: bold;"/>
+                            <input type="submit" name="submitSearch" id="submitSearch" value="Search" class="search_button"/>
+                            <input type="submit" name="newSearch" id="newSearch" value="New" class="search_button"/>
                         </td>
                     </tr>
                 </table>

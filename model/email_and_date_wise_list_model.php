@@ -46,6 +46,7 @@ if($search_cateogry == "email") {
 else if($search_cateogry == "day_wise" && $search_date != "") {
 
     $day_wise_list_query = "SELECT customer_details.SL_NO,
+    customer_details.id,
     NAME,
     DATE,
     RFC_POB,

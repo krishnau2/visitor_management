@@ -20,12 +20,6 @@ $listOfCustomers ->dbconnector($database, $connect);
         <LINK REL=StyleSheet HREF="../css/tablesorter/style.css" TYPE="text/css">
         <LINK REL=StyleSheet HREF="../js/dark-hive/jquery-ui-1.8rc3.custom.css" TYPE="text/css">
         <title>Colour Cafe Customer List</title>
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $("table.tablesorter").tablesorter();
-            });
-        </script>
     </head>
     <body>
         <div id="wrap">

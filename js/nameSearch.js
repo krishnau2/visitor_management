@@ -9,7 +9,9 @@ $(document).ready(function(){
     $("#newSearch").click(function(e){
         e.preventDefault();
         enable_input_box();
-        location.reload();
+        //        location.reload();
+        $('.result_row').remove();
+        newId=1;
         $("#newSearch").hide();
         $("#submitSearch").show();
         clear_input_box();
@@ -19,16 +21,23 @@ $(document).ready(function(){
 
     $("#submitSearch").click(function(e){
         e.preventDefault();
-        disable_input_box();
-        $("#newSearch").show();
-        $("#submitSearch").hide();
         var searchName = $('#searchName').val();
+        if( searchName == ""){
+            alert("Please enter a name to search");
+        }
+        else{
 
-        $.post("../model/nameSearchModel.php", {
-            searchName:searchName
-        }, function(data){
-            process_search_data(data);
-        },"json");
+            disable_input_box();
+            $("#newSearch").show();
+            $("#submitSearch").hide();
+        
+
+            $.post("../model/nameSearchModel.php", {
+                searchName:searchName
+            }, function(data){
+                process_search_data(data);
+            },"json");
+        }
     });
 });
 
@@ -43,7 +52,7 @@ var process_search_data = function(data){
         var temp_bill_date = String(current_data["BILL_1_DATE"]).split(/[- :]/);
         var bill_date = temp_bill_date[2]+"-"+temp_bill_date[1]+"-"+temp_bill_date[0]
         //                alert(date[2]+"-"+date[1]+"-"+date[0]);
-        $('#nameSearchTable').append($('#nameSearchRow').clone(true).attr('id', 'row'+newId));
+        $('#nameSearchTable').append($('#nameSearchRow').clone(true).attr('id', 'row'+newId).attr('class','result_row'));
         $('#row'+newId).append(
             td(date)+
             td(current_data["SL_NO"])+

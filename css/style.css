@@ -175,6 +175,19 @@ p{
     border:2px solid #CCCCCC;
     z-index:1001;
 }
+.name_board{
+    background-color: #F3DDA6;
+}
+.submit_button{
+    height: 45px;
+    width: 160px;
+    margin: 20px;
+}
+.search_button{
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+}
 #about{
     width: 190px;
     height: 20px;
@@ -223,13 +236,11 @@ table.report thead tr .headerSortDown {
 table.report thead tr .headerSortDown, table.report thead tr .headerSortUp {
     background-color: #8dbdd8;
 }
-
 .list_view{
     height: 350px;
     overflow: auto;
     overflow-x: hidden;
 }
-
 .option_panel{
     width: auto;
     height: 33px;
@@ -246,7 +257,6 @@ table.report thead tr .headerSortDown, table.report thead tr .headerSortUp {
     /*background-color: yellow;*/
     float: left;
 }
-
 .loading{
     width: auto;
     height: 100px;

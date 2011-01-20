@@ -110,7 +110,6 @@ if(isset ($_POST["edit"])) {
 
     </head>
     <body>
-
         <div id="wrap">
             <center>
                 <img src="../img/Logo.jpg" alt="Logo" width="500" height="60" />
@@ -264,7 +263,8 @@ if(isset ($_POST["edit"])) {
                             </tr>
                             <tr>
                                 <td><input type="hidden" name="id" id="id" value="<?php echo $id ?>" </td>
-                                <td><input style="height: 45px; width: 160px; margin: 20px;" type="submit" name="save_button" id="save_button" value="Save Details" /> </td>
+                                <td><input class="submit_button" type="submit" name="save_button" id="save_button" 
+                                           value="<?php if($id == 0) echo "Save Details"; else echo "Update Details"; ?>" /> </td>
                                 <td> For Cancellation <input type="checkbox" id="cancel" name="cancel" />  </td>
                             </tr>
                         </tbody>
