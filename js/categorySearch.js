@@ -90,7 +90,7 @@ $(document).ready(function(){
         }
 
         if(bed_room || living_room || kitchen || wall_fashion || single_storey || double_storey || single_storey_RT || double_storey_RT){
-            $.post("../model/categorySearchModel.php", {
+            $.post(".././model/categorySearchModel.php", {
                 bed_room:bed_room,
                 living_room:living_room,
                 kitchen:kitchen,

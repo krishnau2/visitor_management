@@ -3,9 +3,20 @@
 // This page will handle the name search AJAX requests.
 include '../lib/class_connection.php';
 
-$search_date = "";
-$search_cateogry = $_POST['search_cateogry'];
-$search_date = $_POST['date'];
+if(isset ($_POST['search_cateogry'])) {
+    $search_cateogry = $_POST['search_cateogry'];
+}
+else {
+    $search_cateogry = "";
+}
+
+if(isset ($_POST['date'])) {
+    $search_date = $_POST['date'];
+}
+else {
+    $search_date = "";
+}
+
 // Database connection parameters
 $connect=1;
 $disconnect=0;
@@ -59,7 +70,7 @@ else if($search_cateogry == "day_wise" && $search_date != "") {
     ORDER BY customer_details.SL_NO ";
     $result = mysql_query($day_wise_list_query);
     $noOfResults = mysql_num_rows($result);
-    
+
     $returnArray = array ();
 
     if($noOfResults) {

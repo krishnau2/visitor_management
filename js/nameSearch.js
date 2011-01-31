@@ -32,7 +32,7 @@ $(document).ready(function(){
             $("#submitSearch").hide();
         
 
-            $.post("../model/nameSearchModel.php", {
+            $.post(".././model/nameSearchModel.php", {
                 searchName:searchName
             }, function(data){
                 process_search_data(data);

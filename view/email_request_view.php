@@ -12,7 +12,13 @@ $edit_email_request ->dbconnector($database, $connect);
 ?>
 
 <?php
-$msg=$_GET['msg'];
+$message = "";
+if(isset ($_GET['msg'])) {
+    $msg=$_GET['msg'];
+}
+else {
+    $msg = "";
+}
 if($msg=='1') {
     $message = "New email request have been saved successfully .";
     $css_class = "form_success_message";

@@ -12,7 +12,14 @@ $edit_customers ->dbconnector($database, $connect);
 ?>
 
 <?php
-$msg=$_GET['msg'];
+$message = "";
+if(isset ($_GET['msg'])){
+    $msg=$_GET['msg'];
+}
+else {
+    $msg = "";
+}
+
 if($msg=='1') {
     $message = "New Customer Details have been saved successfully .";
     $css_class = "form_success_message";
