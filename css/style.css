@@ -126,6 +126,15 @@ p{
     padding-top: 3px;
     padding-left: 3px;
 }
+.updated_date{
+    width: 200px;
+    height: 20px;
+    float: left;
+    /*background-color: black;*/
+    /*color: white;*/
+    padding-top: 3px;
+    padding-left: 3px;
+}
 .close_button a{
     color: white;
     font-weight: bold;

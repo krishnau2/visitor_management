@@ -64,7 +64,7 @@
                 <table class="report">
                     <thead>
                         <tr style="text-align: center;">
-                            <th colspan="2" style="font-size: 15px;"><?php echo "Analysis from ".$_SESSION['start_date']." to ".$_SESSION['end_date']; ?></th>
+                            <th colspan="2" style="font-size: 15px;"><?php if(isset ($_SESSION['start_date'])){ echo "Analysis from ".$_SESSION['start_date']." to ".$_SESSION['end_date']; } ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,31 +74,31 @@
                         </tr>
                         <tr>
                             <td width="250">Total Days of Activity</td>
-                            <td class="analysis_value"><?php echo $_SESSION['total_days_of_activity'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['total_days_of_activity'])){ echo $_SESSION['total_days_of_activity']; } ?></td>
                         </tr>
                         <tr class="odd">
                             <td>Total No: of Customers</td>
-                            <td class="analysis_value"><?php echo $_SESSION['total_no_of_customers'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['total_no_of_customers'])){ echo $_SESSION['total_no_of_customers']; } ?></td>
                         </tr>
                         <tr>
                             <td>Average No: of Customers per day</td>
-                            <td class="analysis_value"><?php echo $_SESSION['avg_no_of_customers_per_day'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['avg_no_of_customers_per_day'])){ echo $_SESSION['avg_no_of_customers_per_day'];} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>Total Productive Customers</td>
-                            <td class="analysis_value"><?php echo $_SESSION['total_productive_customers'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['total_productive_customers'])){ echo $_SESSION['total_productive_customers'];} ?></td>
                         </tr>
                         <tr>
                             <td>Total Non-Productive Customers</td>
-                            <td class="analysis_value"><?php echo $_SESSION['total_non_productive_customers'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['total_non_productive_customers'])){ echo $_SESSION['total_non_productive_customers'];} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>Date with the Highest Customers</td>
-                            <td class="analysis_value"><?php echo $_SESSION['date_with_highest_customer'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['date_with_highest_customer'])){ echo $_SESSION['date_with_highest_customer'];} ?></td>
                         </tr>
                         <tr>
                             <td>Count of customers on that Date</td>
-                            <td class="analysis_value"><?php echo $_SESSION['no_of_customers_on_that_day'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['no_of_customers_on_that_day'])){ echo $_SESSION['no_of_customers_on_that_day'];} ?></td>
                         </tr>
                         <tr style="text-align: center;">
                             <th colspan="2">RFC (Request for Colour Browsing)</th>
@@ -106,39 +106,39 @@
                         </tr>
                         <tr>
                             <td>Total No: of Requistions</td>
-                            <td class="analysis_value"><?php echo $_SESSION['total_no_of_RFC'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['total_no_of_RFC'])){ echo $_SESSION['total_no_of_RFC'];} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>Total No:of Customer visited</td>
-                            <td class="analysis_value"><?php echo $_SESSION['total_no_of_RFC_visited'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['total_no_of_RFC_visited'])) {echo $_SESSION['total_no_of_RFC_visited'];} ?></td>
                         </tr>
                         <tr>
                             <td>Customer returned due to queue</td>
-                            <td class="analysis_value"><?php echo $_SESSION['no_of_customers_returned_due_to_queue'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['no_of_customers_returned_due_to_queue'])) {echo $_SESSION['no_of_customers_returned_due_to_queue'];} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>No: of Customers have PR#</td>
-                            <td class="analysis_value"><?php echo $_SESSION['total_no_of_RFC_with_PR'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['total_no_of_RFC_with_PR'])) {echo $_SESSION['total_no_of_RFC_with_PR'];} ?></td>
                         </tr>
                         <tr>
-                            <td>NO: of Customers Purchased </td>
-                            <td class="analysis_value"><?php echo $_SESSION['no_of_RFC_customer_purchased'] ?></td>
+                            <td>No: of Customers Purchased </td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['no_of_RFC_customer_purchased'])) { echo $_SESSION['no_of_RFC_customer_purchased'];} ?></td>
                         </tr>
                         <tr class="odd">
-                            <td>Non-Productive Customers </td>
-                            <td class="analysis_value"><?php echo $_SESSION['non_productive_RFC_customers'] ?></td>
+                            <td>No: of Non-Productive Customers </td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['non_productive_RFC_customers'])){ echo $_SESSION['non_productive_RFC_customers'];} ?></td>
                         </tr>
                         <tr>
                             <td>No: of Emails send</td>
-                            <td class="analysis_value"><?php echo $_SESSION['no_of_RFC_email_send'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['no_of_RFC_email_send'])){ echo $_SESSION['no_of_RFC_email_send'];} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>No: of Email Customers </td>
-                            <td class="analysis_value"><?php echo $_SESSION['no_of_RFC_email_customers'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['no_of_RFC_email_customers'])){ echo $_SESSION['no_of_RFC_email_customers'];} ?></td>
                         </tr>
                         <tr>
                             <td>Productive Email Customers </td>
-                            <td class="analysis_value"><?php echo $_SESSION['no_of_RFC_productive_email_customers'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['no_of_RFC_productive_email_customers'])){ echo $_SESSION['no_of_RFC_productive_email_customers'];} ?></td>
                         </tr>
                         <tr style="text-align: center;">
                             <th colspan="2">POB (Preview of Building)</th>
@@ -146,35 +146,35 @@
                         </tr>
                         <tr>
                             <td>Total No: of Requistions</td>
-                            <td class="analysis_value"><?php echo $_SESSION['total_no_of_POB'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['total_no_of_POB'])){ echo $_SESSION['total_no_of_POB'];} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>Total No:of Customer visited</td>
-                            <td class="analysis_value"><?php echo $_SESSION['total_no_of_POB_visited'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['total_no_of_POB_visited'])) {echo $_SESSION['total_no_of_POB_visited'];} ?></td>
                         </tr>
                         <tr>
                             <td>No: of Customers have PR#</td>
-                            <td class="analysis_value"><?php echo $_SESSION['total_no_of_POB_with_PR'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['total_no_of_POB_with_PR'])) {echo $_SESSION['total_no_of_POB_with_PR'];} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>NO: of Customers Purchased </td>
-                            <td class="analysis_value"><?php echo $_SESSION['no_of_POB_customer_purchased'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['no_of_POB_customer_purchased'])) {echo $_SESSION['no_of_POB_customer_purchased'];} ?></td>
                         </tr>
                         <tr>
                             <td>Non Productive Customers</td>
-                            <td class="analysis_value"><?php echo $_SESSION['non_productive_POB'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['non_productive_POB'])){ echo $_SESSION['non_productive_POB'];} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>No: of Emails send</td>
-                            <td class="analysis_value"><?php echo $_SESSION['no_of_POB_email_send'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['no_of_POB_email_send'])){ echo $_SESSION['no_of_POB_email_send'];} ?></td>
                         </tr>
                         <tr>
                             <td>No: of Email Customers </td>
-                            <td class="analysis_value"><?php echo $_SESSION['no_of_POB_email_customers'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['no_of_POB_email_customers'])) {echo $_SESSION['no_of_POB_email_customers'];} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>Productive Email Customers </td>
-                            <td class="analysis_value"><?php echo $_SESSION['no_of_POB_productive_email_customers'] ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['no_of_POB_productive_email_customers'])) {echo $_SESSION['no_of_POB_productive_email_customers'];} ?></td>
                         </tr>
                         <tr>
                             <th>Software opted</th>
@@ -182,27 +182,27 @@
                         </tr>
                         <tr>
                             <td>Asian (015)</td>
-                            <td class="analysis_value"><?php echo $_SESSION['Asian']." nos ( ".$_SESSION['Asian_percentage']." )"; ?> </td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['Asian'])) {echo $_SESSION['Asian']." nos ( ".$_SESSION['Asian_percentage']." )";} ?> </td>
                         </tr>
                         <tr class="odd">
                             <td>ICI (043)</td>
-                            <td class="analysis_value"><?php echo $_SESSION['ICI']." nos ( ".$_SESSION['ICI_percentage']." )" ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['ICI'])) { echo $_SESSION['ICI']." nos ( ".$_SESSION['ICI_percentage']." )";} ?></td>
                         </tr>
                         <tr>
                             <td>Nippon (047)</td>
-                            <td class="analysis_value"><?php echo $_SESSION['Nippon']." nos ( ".$_SESSION['Nippon_percentage']." )" ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['Nippon'])) {echo $_SESSION['Nippon']." nos ( ".$_SESSION['Nippon_percentage']." )";} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>HBC (123)</td>
-                            <td class="analysis_value"><?php echo $_SESSION['HBC']." nos ( ".$_SESSION['HBC_percentage']." )" ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['HBC'])){ echo $_SESSION['HBC']." nos ( ".$_SESSION['HBC_percentage']." )";} ?></td>
                         </tr>
                         <tr>
                             <td>Jotun (044)</td>
-                            <td class="analysis_value"><?php echo $_SESSION['JOTUN']." nos ( ".$_SESSION['JOTUN_percentage']." )" ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['JOTUN'])){ echo $_SESSION['JOTUN']." nos ( ".$_SESSION['JOTUN_percentage']." )";} ?></td>
                         </tr>
                         <tr class="odd">
                             <td>Multi Company</td>
-                            <td class="analysis_value"><?php echo $_SESSION['Multi_company']." nos ( ".$_SESSION['Multi_company_percentage']." )" ?></td>
+                            <td class="analysis_value"><?php if(isset ($_SESSION['Multi_company'])){ echo $_SESSION['Multi_company']." nos ( ".$_SESSION['Multi_company_percentage']." )";} ?></td>
                         </tr>
                     </tbody>
                 </table>

@@ -32,10 +32,13 @@
             </div>
             <div id="lightbox-panel">
                 <center>
-                    <h2>Colour Cafe Customer Management V 1.0</h2>
+                    <h2>Colour Cafe Customer Management V 2.0</h2>
                     <p>Developed and Maintained by</p>
                     <h2>Datamen Consultants Pvt Ltd.</h2>
                 </center>
+                <div class="updated_date">
+                    03/02/2010
+                </div>
                 <div class="close_button">
                     <a id="close-panel" style="text-decoration: none;" href="#">close [X]</a>
                 </div>
