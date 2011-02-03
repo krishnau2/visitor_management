@@ -2,7 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/home/sph/NetBeansProjects/colour_cafe/analysis_model.php</file>
-        <file>file:/home/sph/NetBeansProjects/colour_cafe/lib/class_connection.php</file>
+        <file>file:/home/sph/NetBeansProjects/colour_cafe/model/analysis_model.php</file>
+        <file>file:/home/sph/NetBeansProjects/colour_cafe/model/nameSearchModel.php</file>
+        <file>file:/home/sph/NetBeansProjects/colour_cafe/view/customer_list.php</file>
+        <file>file:/home/sph/NetBeansProjects/colour_cafe/model/email_and_date_wise_list_model.php</file>
+        <file>file:/home/sph/NetBeansProjects/colour_cafe/view/analysis_view.php</file>
+        <file>file:/home/sph/NetBeansProjects/colour_cafe/model/save_customer_details.php</file>
+        <file>file:/home/sph/NetBeansProjects/colour_cafe/css/style.css</file>
     </open-files>
 </project-private>

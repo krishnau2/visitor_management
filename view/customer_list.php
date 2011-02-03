@@ -49,6 +49,10 @@ $listOfCustomers ->dbconnector($database, $connect);
                         <input type="text" name="search_date" id="search_date" size="10" />
                         <input type="submit" name="day_wise_customer_list_submit" id="day_wise_customer_list_submit" value="List it"/>
                     </div>
+                    <div class="controls">
+                        <label> Non-Productive :  </label>
+                        <input type="checkbox" name="non_productive" id="non_productive" />
+                    </div>
                 </form>
             </div>
             <table class="tablesorter" style="border: 1px solid silver;">
@@ -180,6 +184,34 @@ $listOfCustomers ->dbconnector($database, $connect);
             and it is enough for this section also. If multiple declaration is done then transparacy get reduced. -->
             <!--     <div id="lightbox"></div><!-- /lightbox -->
             <!-- End of day wise list section -->
+
+            <!-- Non Productive customers list section -->
+            <div id="non_productive_customers_list_lightbox_panel">
+                <div class="pop-up_caption">
+                    Non-Productive customers List.
+                </div>
+                <div class="close_button">
+                    <a id="close-panel" style="text-decoration: none;" href="#">close [X]</a>
+                </div>
+                <div id="loading"></div>
+                <table class="report" id="non_productive_customer_list_table" style="border: 1px solid silver;">
+                    <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th>Date</th>
+                            <th>No.</th>
+                            <th>RFC/POB</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>SW Id</th>
+                            <td width="10"></td>
+                        </tr>
+                    </thead>
+                    <tbody class="list_view" >
+                        <tr id="non_productive_customer_list_row" class="non_productive_customer_list_row" style="display: none;" ></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
 </html>

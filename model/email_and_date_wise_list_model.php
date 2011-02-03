@@ -85,5 +85,30 @@ else if($search_cateogry == "day_wise" && $search_date != "") {
     }
 
 }
+else if($search_cateogry == "non-productive") {
+    $email_list_query = "SELECT DATE,SL_NO,
+    NAME,
+    RFC_POB,
+    NAME,
+    ADDRESS,
+    SOFTWARE_ID
+    FROM customer_details
+    WHERE BILL_1 = \" \" AND SOFTWARE_ID <> 'Cancelled'
+    ORDER BY SL_NO DESC ";
+    $result = mysql_query($email_list_query);
+    $noOfResults = mysql_num_rows($result);
+
+    $returnArray = array ();
+
+    if($noOfResults) {
+        while ($row = mysql_fetch_assoc($result)) {
+            array_push($returnArray,$row);
+        }
+        echo json_encode($returnArray);
+    }
+    else {
+        echo "error";
+    }
+}
 
 ?>

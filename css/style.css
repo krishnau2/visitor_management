@@ -175,6 +175,21 @@ p{
     border:2px solid #CCCCCC;
     z-index:1001;
 }
+#non_productive_customers_list_lightbox_panel{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    display:none;
+    position:fixed;
+    top:100px;
+    left:50%;
+    margin-left:-360px;
+    width:700px;
+    background:#FFFFFF;
+    padding:10px 15px 10px 15px;
+    border:2px solid #CCCCCC;
+    z-index:1001;
+}
 .name_board{
     background-color: #F3DDA6;
 }
@@ -199,7 +214,7 @@ p{
 }
 
 table.report {
-    font-family:arial;
+    font-family:Verdana,Arial,Helvetica,sans-serif;
     background-color: #CDCDCD;
     margin:10px 0pt 10px;
     font-size: 8pt;
@@ -225,7 +240,8 @@ table.report tbody td {
     vertical-align: top;
 }
 table.report tbody tr.odd td {
-    background-color:#35359c;
+    background-color:#599cf6;
+    color: white;
 }
 table.report thead tr .headerSortUp {
     /*background-image: url(asc.gif);*/
@@ -236,6 +252,7 @@ table.report thead tr .headerSortDown {
 table.report thead tr .headerSortDown, table.report thead tr .headerSortUp {
     background-color: #8dbdd8;
 }
+
 .list_view{
     height: 350px;
     overflow: auto;
@@ -264,4 +281,13 @@ table.report thead tr .headerSortDown, table.report thead tr .headerSortUp {
     display: none;
     background-image: url(../../img/ajax-loader.gif);
     background-repeat: no-repeat;
+}
+.analysis{
+    width: 480px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto
+}
+.analysis_value{
+    text-align: right;
 }
